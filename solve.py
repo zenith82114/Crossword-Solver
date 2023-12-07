@@ -3,7 +3,7 @@ from tabulate import tabulate
 from file_path import *
 import json
 import z3
-from schema import CROSSWORD_GRID
+from schema import make_crossword_grid
 
 """
 NOTE: No length-verification is required in Solve(),
@@ -12,7 +12,7 @@ NOTE: No length-verification is required in Solve(),
 
 # Pattern is (initial_X, initial_Y), direction(D or A), length
 # "": {"start":(), "direction":"", "length": },
-GRID = CROSSWORD_GRID
+GRID = make_crossword_grid()
 
 class Solve():
 	def __init__(self):
@@ -153,7 +153,7 @@ class Solve():
 		solver.add(self.make_guess_constraint())
 		solver.add(self.common_position_constraint())
 		solver.check()
-		
+
 		return solver.model()
 
 	def solution(self):

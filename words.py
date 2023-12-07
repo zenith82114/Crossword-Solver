@@ -4,7 +4,7 @@ from nltk.corpus import stopwords
 from ast import literal_eval
 import gensim.downloader as api
 from file_path import *
-from schema import CROSSWORD_GRID
+from schema import make_crossword_grid
 import pickle
 import string
 import requests
@@ -37,7 +37,7 @@ class Words():
 				all_word_vectors = pickle.load(fp)
 			return all_word_vectors
 		except:
-			return None		
+			return None
 
 	def wikipedia_solution(self, wikipedia_clues, clues):
 		WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php?action=query&utf8=&format=json&list=search&srlimit=50&srsearch="
@@ -96,7 +96,7 @@ class Words():
 		stop = stopwords.words('english') + list(string.punctuation)
 		clues_tokenized = dict()
 		clue_mapping = dict()
-		
+
 		clue_plural = dict()
 		infl = inflect.engine()
 
@@ -269,7 +269,7 @@ class Words():
 		one_word_clues = [(clue.lower(),clue) for clue in all_clues if len(clue.split(" ")) == 1]
 
 		# converting words such as extra-large into large
-		one_word_clues += [(clue.split("-")[-1].lower(),clue) for clue in all_clues 
+		one_word_clues += [(clue.split("-")[-1].lower(),clue) for clue in all_clues
 								if ("-" in clue) and (len(clue.split("-"))) == 2]
 		one_word_solved = self.one_word_solution_alternate([clue[0] for clue in one_word_clues], clues)
 
@@ -287,9 +287,9 @@ class Words():
 		self.store_words(one_word_solved, one_word_clues, sentence_solved, wikipedia_solved)
 
 if __name__ == '__main__':
-	grid = CROSSWORD_GRID
+	grid = make_crossword_grid()
 	clues = dict()
-	for clue in CROSSWORD_GRID:
-		clues[clue] = CROSSWORD_GRID[clue]["length"]
+	for clue in grid:
+		clues[clue] = grid[clue]["length"]
 
 	Words().fetch_words(clues)

@@ -1,0 +1,24 @@
+__ of bad news
+0 1 D 6
+Posture problem
+0 3 D 5
+Loads
+0 4 D 6
+Laundry appliance
+0 5 D 5
+Lectured
+1 0 D 5
+One who weeps
+1 2 D 5
+Grassy clump
+0 3 A 3
+Pie chart portion
+1 0 A 6
+"Scary Movie," e.g.
+2 0 A 6
+Maryland's state bird
+3 0 A 6
+Something worth saving
+4 0 A 6
+"To __ is human"
+5 0 A 3

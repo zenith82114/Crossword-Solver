@@ -1,6 +1,6 @@
 from nltk.corpus import stopwords
 from collections import Counter
-from schema import CROSSWORD_GRID
+from schema import make_crossword_grid
 from file_path import *
 import string
 import math
@@ -58,7 +58,7 @@ class Words_Offline():
 						clue_mapping[clue] += [guess.split()[0].lower()]
 
 		for clue in clues:
-			clue_mapping[clue] = list(set(clue_mapping[clue]))				
+			clue_mapping[clue] = list(set(clue_mapping[clue]))
 
 		return clue_mapping
 
@@ -69,9 +69,9 @@ class Words_Offline():
 			json.dump(str(all_solved), fp)
 
 if __name__ == '__main__':
-	grid = CROSSWORD_GRID
+	grid = make_crossword_grid()
 	clues = dict()
-	for clue in CROSSWORD_GRID:
-		clues[clue] = CROSSWORD_GRID[clue]["length"]
+	for clue in grid:
+		clues[clue] = grid[clue]["length"]
 
 	Words_Offline().fetch_words(clues)
