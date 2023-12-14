@@ -6,7 +6,7 @@ def make_crossword_grid():
     with open("input.txt", "r") as f:
         lines = [line.strip() for line in f.readlines()]
         n = len(lines)
-        for i in range(0, n, 2):
+        for i in range(0, n, 3):
             clue = lines[i]
             x, y, direction, length = lines[i+1].split()
             grid[clue] = {

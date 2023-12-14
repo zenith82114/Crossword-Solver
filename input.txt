@@ -1,24 +1,36 @@
 __ of bad news
 0 1 D 6
+bearer
 Posture problem
 0 3 D 5
+stoop
 Loads
 0 4 D 6
+oodles
 Laundry appliance
 0 5 D 5
+dryer
 Lectured
 1 0 D 5
+spoke
 One who weeps
 1 2 D 5
+crier
 Grassy clump
 0 3 A 3
+sod
 Pie chart portion
 1 0 A 6
+sector
 "Scary Movie," e.g.
 2 0 A 6
+parody
 Maryland's state bird
 3 0 A 6
+oriole
 Something worth saving
 4 0 A 6
+keeper
 "To __ is human"
 5 0 A 3
+err
