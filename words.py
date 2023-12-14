@@ -79,6 +79,7 @@ class Words():
 		topn = 4000
 
 		for sentence in sentence_clues:
+			search_words = []
 			pos = [word for word in word_tokenize(sentence.lower()) if word not in stop]
 			try:
 				search_words = [word[0] for word in self.word_vectors.most_similar(positive=pos, topn=topn) if len(word[0])==clues[sentence]]
